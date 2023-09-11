@@ -1,0 +1,44 @@
+package main
+
+import (
+	"fmt"
+	"sort"
+)
+
+func main() {
+	fmt.Println("Welcome to video on Slices")
+
+	var fruitLess = []string{"Apple", "Tomato"}
+	//fmt.Printf("Type of fruitList is %T\n", fruitLess)
+
+	fruitLess = append(fruitLess, "Mango", "Banana")
+
+	//fmt.Printf("New fruitList is %v\n", fruitLess)
+
+	//fruitLess = append(fruitLess[2:])  // It will get Range position data.  it will start will 2 Postion
+	//fruitLess = append(fruitLess[:3])  //After collon data Up to that data fetch
+	fruitLess = append(fruitLess[1:3]) // It will Get Rane between data
+	//fmt.Println(fruitLess)
+
+	highscores := make([]int, 4)
+
+	highscores[0] = 224
+	highscores[1] = 243
+	highscores[2] = 274
+	highscores[3] = 254
+
+	highscores = append(highscores, 748, 875, 784, 343, 434)
+	fmt.Println(highscores)
+
+	sort.Ints(highscores)
+	//fmt.Println(highscores)
+	//fmt.Println(sort.IntsAreSorted(highscores))
+
+	//How to remove a value from slices based on index
+	var courses = []string{"Ruby", "Pahthon", "readtJS", "Javascript", "Swift"}
+	fmt.Println(courses)
+
+	var index int = 2
+	courses = append(courses[:index], courses[index+1:]...)
+	fmt.Println(courses)
+}
